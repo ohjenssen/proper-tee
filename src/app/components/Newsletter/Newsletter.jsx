@@ -1,5 +1,7 @@
+import styles from './Newsletter.module.css'
+
 export default function Newsletter(){
     return (
-        <h2>Newsletter</h2>
+        <h2 className={styles.title}>Newsletter</h2>
     )
 }
