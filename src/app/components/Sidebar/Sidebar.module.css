@@ -1,0 +1,85 @@
+ 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 200px;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+}
+
+.filter {
+  border: 1px solid #D43F3F;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filterTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.toggleInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #333;
+  border-radius: 26px;
+  transition: 0.3s;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggleInput:checked + .toggleSlider {
+  background-color: #D43F3F;
+}
+
+.toggleInput:checked + .toggleSlider:before {
+  transform: translateX(24px);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.checkboxLabel input {
+  accent-color: #D43F3F;
+  width: 16px;
+  height: 16px;
+}
