@@ -1,10 +1,13 @@
-import Link from "next/link";
+import Hero from "./components/Hero/Hero";
+import Banner from "./components/Banner/Banner";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   return (
     <main>
-      <h1>Home</h1>
-      <Link href="/about">About</Link>
+      <Hero />
+      <Banner />
+      <Footer />
     </main>
   );
 }

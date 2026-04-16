@@ -1,0 +1,85 @@
+ 
+.footer {
+  background-color: #000000;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  padding: 4rem 2rem 2rem;
+  box-sizing: border-box;
+  
+}
+
+
+.newsletter {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.newsletterText {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.newsletterBtn {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.6rem 2rem;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletterBtn:hover {
+  background: white;
+  color: black;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-top: 1px solid #000000;
+}
+
+.columns {
+  display: flex;
+  gap: 6rem;
+}
+
+.column h4 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.column ul li:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  padding-top: 2rem;
+  border-top: 1px solid #000000;
+}
