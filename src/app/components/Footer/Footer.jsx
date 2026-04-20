@@ -13,7 +13,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <Image src="/logoXL.svg" alt="Proper Tee" width={120} height={60} />
+        <Image src="/logoXL.svg" alt="Proper Tee" width={190} height={60} />
 
         <div className={styles.columns}>
           <div className={styles.column}>

@@ -1,6 +1,41 @@
- 
 .shopPage {
   display: flex;
   min-height: 100vh;
   padding: 2rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+.productCard {
+  background-color: #111;
+  cursor: pointer;
+}
+
+.productImage {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background-color: #c8c8c8;
+}
+
+.productName {
+  color: #D43F3F;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.5rem 0;
+}
+
+.productPrice {
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.2rem 0.5rem 0.5rem;
 }
