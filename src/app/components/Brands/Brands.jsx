@@ -9,7 +9,7 @@ export default function Brands() {
   ];
 
   return (
-    <section>
+    <section style={{ backgroundColor: '#000' }}>
       <h2 className={styles.title}>Populære brands</h2>
       <div className={styles.brandsSection}>
         <div className={styles.brandsContainer}>

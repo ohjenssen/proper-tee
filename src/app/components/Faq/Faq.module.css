@@ -2,11 +2,13 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 300px;
+  margin-bottom: 300px;
 }
 
 .faqItem {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   padding-bottom: 10px;
 }
 
@@ -60,3 +62,4 @@
 .faqItem.open .question {
   color: var(--redColor); 
 }
+
