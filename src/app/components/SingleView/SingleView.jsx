@@ -1,10 +1,33 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { useCart } from "../../context/CartContext";
+import { useState } from "react";
 
 export default function SingleView({ product }) {
+  const { addToCart } = useCart();
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+
   if (!product) {
     return null;
   }
+
+function handleAddToCart() {
+  if (!selectedSize) {
+    alert('Vælg en størrelse først!');
+    return;
+  }
+  addToCart({
+    id: `${product.id}-${selectedSize}`,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    size: selectedSize,
+  });
+  alert(`${product.name} (${selectedSize}) er tilføjet til kurven!`);
+}
 
   return (
     <main className="min-h-screen bg-black px-6 py-10 text-white md:px-12 lg:px-16">
@@ -33,12 +56,28 @@ export default function SingleView({ product }) {
                 {product.name}
               </h1>
               <p className="text-3xl font-semibold text-[#D43F3F]">
-                ${product.price}
+                {product.price} kr.
               </p>
             </div>
 
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 text-white/90 shadow-sm md:p-8">
-              <p className="text-base leading-7">{product.description}</p>
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 md:p-8">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+                Farver
+              </h3>
+              <div className="flex gap-3">
+                {['#111111', '#FFFFFF', '#D43F3F', '#1a3a5c'].map((color) => (
+                  <button
+                    key={color}
+                    onClick={() => setSelectedColor(color)}
+                    style={{ backgroundColor: color }}
+                    className={`w-8 h-8 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                      selectedColor === color
+                        ? 'border-[#D43F3F] scale-110'
+                        : 'border-white/20'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="grid gap-6">
@@ -50,7 +89,12 @@ export default function SingleView({ product }) {
                   {product.sizes.map((size) => (
                     <span
                       key={size}
-                      className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm text-white"
+                      onClick={() => setSelectedSize(size)}
+                      className={`rounded-full border px-4 py-2 text-sm cursor-pointer transition ${
+                        selectedSize === size
+                          ? 'border-[#D43F3F] bg-[#D43F3F] text-white'
+                          : 'border-white/20 bg-white/5 text-white hover:border-[#D43F3F]'
+                      }`}
                     >
                       {size}
                     </span>
@@ -85,7 +129,9 @@ export default function SingleView({ product }) {
               </div>
             </div>
 
-            <button className="mt-2 rounded-xl bg-[#D43F3F] px-8 py-4 text-base font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#ff6b6b]">
+            <button 
+              onClick={handleAddToCart}
+              className="mt-2 rounded-xl bg-[#D43F3F] px-8 py-4 text-base font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#ff6b6b]">
               Tilføj til kurv
             </button>
 

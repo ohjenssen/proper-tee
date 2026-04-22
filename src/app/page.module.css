@@ -1,0 +1,9 @@
+.featuredProduct {
+  width: 1400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.featuredProduct :global(.h-\[250px\]) {
+  height: 1300px !important;
+}

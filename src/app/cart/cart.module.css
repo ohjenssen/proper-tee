@@ -1,0 +1,117 @@
+ 
+.cartPage {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.empty {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.shopLink {
+  color: #D43F3F;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #222;
+  border-radius: 1rem;
+  background-color: #111;
+}
+
+.itemImage {
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #D43F3F;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.itemPrice {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+
+.itemQuantity {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.removeBtn {
+  background: transparent;
+  border: 1px solid #D43F3F;
+  color: #D43F3F;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-jost), sans-serif;
+  transition: all 0.3s ease;
+}
+
+.removeBtn:hover {
+  background: #D43F3F;
+  color: white;
+}
+
+.total {
+  border-top: 1px solid #222;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.checkoutBtn {
+  background: #D43F3F;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkoutBtn:hover {
+  background: #ff6b6b;
+}

@@ -1,6 +1,4 @@
-import ProductCard from "../components/Productcard/ProductCard";
-import Sidebar from "../components/Sidebar/Sidebar";
-import styles from "./shop.module.css";
+import ShopClient from './ShopClient';
 import OAuth from 'oauth-1.0a';
 import CryptoJS from 'crypto-js';
 
@@ -30,24 +28,5 @@ async function getProducts() {
 
 export default async function Shop() {
   const products = await getProducts();
-
-  return (
-    <main className={styles.shopPage}>
-      <Sidebar />
-      <div className={styles.productsGrid}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={{
-              id: product.id,
-              name: product.name,
-              price: product.price,
-              image: product.images[0]?.src || '/whiteShirt.svg',
-              alt: product.name,
-            }}
-          />
-        ))}
-      </div>
-    </main>
-  );
+  return <ShopClient products={products} />;
 }

@@ -12,7 +12,7 @@ export default function ProductCard({ product = {} }) {
 
   return (
     <Link href={`/shop/${id}`} className="block no-underline">
-      <div className="max-w-[300px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#D43F3F] bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_20px_60px_rgba(212,63,63,0.18)]">
+      <div className="max-w-h-[500px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#D43F3F] bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_20px_60px_rgba(212,63,63,0.18)]">
         <div className="mb-4 flex h-[250px] items-center justify-center overflow-hidden rounded-[1rem] bg-white/5">
           <Image
             src={image}

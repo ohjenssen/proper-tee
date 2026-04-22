@@ -7,6 +7,7 @@ import SingleView from "./components/SingleView/SingleView";
 import Faq from "./components/Faq/Faq";
 import OAuth from 'oauth-1.0a';
 import CryptoJS from 'crypto-js';
+import styles from './page.module.css';
 
 async function getProducts() {
   const oauth = new OAuth({
@@ -38,26 +39,41 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <section style={{ padding: '10rem 2rem', backgroundColor: '#000000' }}>
-        <h2 style={{ color: 'white', fontFamily: 'var(--font-jost)', textAlign: 'center', marginBottom: '4rem', fontSize: '2rem', fontWeight: '300' }}>Trend</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto', justifyContent: 'center' }}>
-          {products.slice(0, 4).map((product) => (
-            <ProductCard
-              key={product.id}
-              product={{
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image: product.images[0]?.src || '/whiteShirt.svg',
-                alt: product.name,
-              }}
-            />
-          ))}
-        </div>
-      </section>
-      <Banner />
-      <Brands />
-      <SingleView />
+<section className="py-40 px-8 bg-black">
+  <h2 className="text-white text-center mb-16 text-3xl font-light">Trend</h2>
+  <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {products.slice(0, 3).map((product) => (
+      <ProductCard
+        key={product.id}
+        product={{
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.images[0]?.src || '/whiteShirt.svg',
+          alt: product.name,
+        }}
+      />
+    ))}
+  </div>
+</section>
+<Banner />
+<Brands />
+<section className="py-16 px-8 bg-black flex flex-col items-center">
+  <h2 className="text-white text-3xl font-light uppercase tracking-widest mb-8">Featured</h2>
+  {products.slice(0, 1).map((product) => (
+    <div key={product.id} className={styles.featuredProduct}>
+      <ProductCard
+        product={{
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.images[0]?.src || '/whiteShirt.svg',
+          alt: product.name,
+        }}
+      />
+    </div>
+  ))}
+</section>
       <Faq />
       <Footer />
     </main>
