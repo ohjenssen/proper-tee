@@ -11,8 +11,8 @@ import styles from './page.module.css';
 async function getProducts() {
   const oauth = new OAuth({
     consumer: {
-      key: 'ck_2285e4003e11378f22ee4ece6ecdc195c379050e',
-      secret: 'cs_9e6fb0ffa8c620e88471125b341a979d025ced8a',
+          key: process.env.WOOCOMMERCE_KEY,
+          secret: process.env.WOOCOMMERCE_SECRET,
     },
     signature_method: 'HMAC-SHA1',
     hash_function(base_string, key) {
