@@ -3,7 +3,6 @@ import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import ProductCard from "./components/Productcard/ProductCard";
 import Brands from "./components/Brands/Brands";
-import SingleView from "./components/SingleView/SingleView";
 import Faq from "./components/Faq/Faq";
 import OAuth from 'oauth-1.0a';
 import CryptoJS from 'crypto-js';

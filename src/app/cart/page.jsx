@@ -38,7 +38,9 @@ export default function CartPage() {
       </div>
       <div className={styles.total}>
         <p>Total: {getTotalPrice().toFixed(2)} kr.</p>
-        <button className={styles.checkoutBtn}>Gå til betaling</button>
+        <Link href="/checkout" className="mt-2 rounded-xl bg-[#D43F3F] px-8 py-4 font-black uppercase tracking-[0.2em] text-white transition hover:bg-[#ff6b6b]">
+  Gå til betaling
+</Link>
       </div>
     </main>
   );

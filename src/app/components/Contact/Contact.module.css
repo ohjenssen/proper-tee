@@ -1,0 +1,137 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: overlayIn 0.3s ease forwards;
+}
+
+.modal {
+  background: #000000;
+  border: 1px solid #222;
+  border-radius: 1rem;
+  padding: 3rem;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal {
+  background: #000000;
+  border: 1px solid #222;
+  border-radius: 1rem;
+  padding: 3rem;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.label {
+  display: block;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  padding: 0.8rem;
+  outline: none;
+  min-height: 120px;
+  resize: none;
+}
+
+.hint {
+  color: white;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.submitBtn {
+  display: block;
+  margin: 0 auto;
+  background: #D43F3F;
+  color: white;
+  border: none;
+  padding: 0.8rem 3rem;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.submitBtn:hover {
+  background: #ff6b6b;
+}
